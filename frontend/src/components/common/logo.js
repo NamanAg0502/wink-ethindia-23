@@ -6,7 +6,7 @@ const Logo = () => {
     <Link href="/">
       <div className="flex items-center justify-center gap-2">
         <span>
-          <PawPrint color="green" />
+          <PawPrint className="text-green-500" />
         </span>
         <span className="text-lg">PixelPaw</span>
       </div>

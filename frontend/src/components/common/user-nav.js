@@ -1,3 +1,6 @@
+'use client';
+
+import { logout } from '@/services/auth-services';
 import { Button } from '../ui/button';
 import {
   DropdownMenu,
@@ -8,7 +11,9 @@ import {
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
 import { MoreVertical } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 const UserNavigation = () => {
+  const router = useRouter();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -27,7 +32,16 @@ const UserNavigation = () => {
         <DropdownMenuItem>Pets</DropdownMenuItem>
         <DropdownMenuItem>Team</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="text-red-400">Logout</DropdownMenuItem>
+        <DropdownMenuItem
+          className="text-red-400"
+          onClick={() => {
+            console.log('CLikced Logout');
+            logout;
+            router.replace('/auth');
+          }}
+        >
+          Logout
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

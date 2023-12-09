@@ -1,3 +1,4 @@
+import Navbar from '@/components/common/navbar';
 import Hero from '@/components/home/hero';
 
 const Home = () => {

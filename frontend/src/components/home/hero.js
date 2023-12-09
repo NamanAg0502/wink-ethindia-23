@@ -1,41 +1,34 @@
 import Image from 'next/image';
-import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '../ui/card';
 import { cn } from '@/lib/utils';
+import { Button } from '../ui/button';
+import { PawPrint } from 'lucide-react';
 
 const Hero = () => {
   return (
     <div className="max-h-[100vh - 64px] w-full px-4 py-5">
-      <div className="flex justify-center items-center gap-10">
-        <div className="relative h-full">
+      <div className="h-[70vh] relative">
+        <div className="relative h-full w-full">
           <Image
             src="/images/pets.svg"
-            height={700}
-            width={700}
-            className={cn('transition-all aspect-square bg-white rounded-lg')}
+            fill={true}
+            objectFit="cover"
+            className={cn(
+              'transition-all aspect-square dark:bg-black rounded-lg opacity-70'
+            )}
           />
         </div>
-        <div className="grid grid-rows-2 gap-6 w-1/3">
-          <Card className="cursor-pointer hover:scale-105 ease-in-out duration-200">
-            <CardHeader className="flex justify-start items-start">
-              <div></div>
-              <CardTitle className="text-green-500">
-                I want to adopt a pet
-              </CardTitle>
-              <CardDescription>
-                Search the available pets listed on PixelPaw
-              </CardDescription>
-            </CardHeader>
-          </Card>
-          <Card className="cursor-pointer hover:scale-105 ease-in-out duration-200">
-            <CardHeader className="flex justify-start items-start">
-              <CardTitle className="text-green-500">
-                I need to rehome my pet
-              </CardTitle>
-              <CardDescription>
-                Start the process. It's free to list your pet on PixelPaw
-              </CardDescription>
-            </CardHeader>
-          </Card>
+        <div className="absolute top-3/4 left-1/2 -translate-x-1/2">
+          <Button variant="outline" className="px-10 py-6">
+            <PawPrint className="w-8 h-8 mr-2 text-green-500" />
+            <span className="text-lg">I want to adopt a Pet</span>
+          </Button>
         </div>
       </div>
     </div>
