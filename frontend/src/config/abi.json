@@ -1,0 +1,387 @@
+[
+     {
+          "anonymous": false,
+          "inputs": [
+               {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+               },
+               {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "species",
+                    "type": "string"
+               },
+               {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "breed",
+                    "type": "string"
+               },
+               {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "shelter",
+                    "type": "address"
+               },
+               {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "imageUrl",
+                    "type": "string"
+               },
+               {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "description",
+                    "type": "string"
+               }
+          ],
+          "name": "PetAdded",
+          "type": "event"
+     },
+     {
+          "anonymous": false,
+          "inputs": [
+               {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "petId",
+                    "type": "uint256"
+               },
+               {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "adopter",
+                    "type": "address"
+               },
+               {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "adoptionFee",
+                    "type": "uint256"
+               }
+          ],
+          "name": "PetAdopted",
+          "type": "event"
+     },
+     {
+          "anonymous": false,
+          "inputs": [
+               {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "petId",
+                    "type": "uint256"
+               },
+               {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caregiver",
+                    "type": "address"
+               },
+               {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "updates",
+                    "type": "string"
+               },
+               {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+               }
+          ],
+          "name": "ProofOfCareSubmitted",
+          "type": "event"
+     },
+     {
+          "inputs": [
+               {
+                    "internalType": "string",
+                    "name": "_species",
+                    "type": "string"
+               },
+               {
+                    "internalType": "string",
+                    "name": "_breed",
+                    "type": "string"
+               },
+               {
+                    "internalType": "string",
+                    "name": "_medicalHistory",
+                    "type": "string"
+               },
+               {
+                    "internalType": "string",
+                    "name": "_behaviorAssessment",
+                    "type": "string"
+               },
+               {
+                    "internalType": "string",
+                    "name": "_imageUrl",
+                    "type": "string"
+               },
+               {
+                    "internalType": "string",
+                    "name": "_description",
+                    "type": "string"
+               }
+          ],
+          "name": "addPet",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+     },
+     {
+          "inputs": [
+               {
+                    "internalType": "uint256",
+                    "name": "_petId",
+                    "type": "uint256"
+               }
+          ],
+          "name": "adoptPet",
+          "outputs": [],
+          "stateMutability": "payable",
+          "type": "function"
+     },
+     {
+          "inputs": [],
+          "name": "adoptionIdCounter",
+          "outputs": [
+               {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+               }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+     },
+     {
+          "inputs": [
+               {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+               }
+          ],
+          "name": "adoptions",
+          "outputs": [
+               {
+                    "internalType": "uint256",
+                    "name": "petId",
+                    "type": "uint256"
+               },
+               {
+                    "internalType": "address",
+                    "name": "adopter",
+                    "type": "address"
+               },
+               {
+                    "internalType": "uint256",
+                    "name": "adoptionTimestamp",
+                    "type": "uint256"
+               },
+               {
+                    "internalType": "uint256",
+                    "name": "adoptionFee",
+                    "type": "uint256"
+               }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+     },
+     {
+          "inputs": [
+               {
+                    "internalType": "uint256",
+                    "name": "_petId",
+                    "type": "uint256"
+               }
+          ],
+          "name": "getPetDetails",
+          "outputs": [
+               {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+               },
+               {
+                    "internalType": "string",
+                    "name": "species",
+                    "type": "string"
+               },
+               {
+                    "internalType": "string",
+                    "name": "breed",
+                    "type": "string"
+               },
+               {
+                    "internalType": "uint256",
+                    "name": "addTimestamp",
+                    "type": "uint256"
+               },
+               {
+                    "internalType": "string",
+                    "name": "medicalHistory",
+                    "type": "string"
+               },
+               {
+                    "internalType": "string",
+                    "name": "behaviorAssessment",
+                    "type": "string"
+               },
+               {
+                    "internalType": "address",
+                    "name": "shelter",
+                    "type": "address"
+               },
+               {
+                    "internalType": "string",
+                    "name": "imageUrl",
+                    "type": "string"
+               },
+               {
+                    "internalType": "string",
+                    "name": "description",
+                    "type": "string"
+               }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+     },
+     {
+          "inputs": [],
+          "name": "petIdCounter",
+          "outputs": [
+               {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+               }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+     },
+     {
+          "inputs": [
+               {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+               }
+          ],
+          "name": "pets",
+          "outputs": [
+               {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+               },
+               {
+                    "internalType": "string",
+                    "name": "species",
+                    "type": "string"
+               },
+               {
+                    "internalType": "string",
+                    "name": "breed",
+                    "type": "string"
+               },
+               {
+                    "internalType": "uint256",
+                    "name": "addTimestamp",
+                    "type": "uint256"
+               },
+               {
+                    "internalType": "string",
+                    "name": "medicalHistory",
+                    "type": "string"
+               },
+               {
+                    "internalType": "string",
+                    "name": "behaviorAssessment",
+                    "type": "string"
+               },
+               {
+                    "internalType": "address",
+                    "name": "shelter",
+                    "type": "address"
+               },
+               {
+                    "internalType": "string",
+                    "name": "imageUrl",
+                    "type": "string"
+               },
+               {
+                    "internalType": "string",
+                    "name": "description",
+                    "type": "string"
+               }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+     },
+     {
+          "inputs": [
+               {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+               },
+               {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+               }
+          ],
+          "name": "proofOfCares",
+          "outputs": [
+               {
+                    "internalType": "uint256",
+                    "name": "petId",
+                    "type": "uint256"
+               },
+               {
+                    "internalType": "address",
+                    "name": "caregiver",
+                    "type": "address"
+               },
+               {
+                    "internalType": "string",
+                    "name": "updates",
+                    "type": "string"
+               },
+               {
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+               }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+     },
+     {
+          "inputs": [
+               {
+                    "internalType": "uint256",
+                    "name": "_petId",
+                    "type": "uint256"
+               },
+               {
+                    "internalType": "string",
+                    "name": "_updates",
+                    "type": "string"
+               }
+          ],
+          "name": "submitProofOfCare",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+     }
+]
