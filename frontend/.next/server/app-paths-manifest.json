@@ -1,0 +1,6 @@
+{
+  "/pets/page": "app/pets/page.js",
+  "/page": "app/page.js",
+  "/auth/page": "app/auth/page.js",
+  "/add-pet/page": "app/add-pet/page.js"
+}
