@@ -1,3 +1,4 @@
+import Web3ContextProvider from '@/context/ethers-provider';
 import { ThemeProvider } from '@/context/theme-provider';
 
 const Providers = ({ children }) => {
@@ -8,7 +9,7 @@ const Providers = ({ children }) => {
       enableSystem
       disableTransitionOnChange
     >
-      {children}
+      <Web3ContextProvider>{children}</Web3ContextProvider>
     </ThemeProvider>
   );
 };
